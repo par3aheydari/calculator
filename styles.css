@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'Vazir';
+    src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/Vazir.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/Vazir-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/Vazir-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --bg-color: #1a1a1a;
+    --calculator-bg: #2d2d2d;
+    --display-bg: #1e1e1e;
+    --button-bg: #3d3d3d;
+    --button-hover: #4d4d4d;
+    --text-color: #fff;
+    --result-color: #4CAF50;
+}
+
+[data-theme="light"] {
+    --bg-color: #f0f0f0;
+    --calculator-bg: #ffffff;
+    --display-bg: #e8e8e8;
+    --button-bg: #e0e0e0;
+    --button-hover: #d0d0d0;
+    --text-color: #333;
+    --result-color: #2E7D32;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Vazir', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.calculator {
+    background-color: var(--calculator-bg);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    transition: background-color 0.3s ease;
+}
+
+.display {
+    background-color: var(--display-bg);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+    direction: ltr;
+    transition: background-color 0.3s ease;
+}
+
+#result {
+    color: var(--result-color);
+    font-size: 2.5rem;
+    min-height: 3rem;
+    word-break: break-all;
+    transition: color 0.3s ease;
+    font-weight: 700;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    background-color: var(--button-bg);
+    border: none;
+    padding: 15px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.operator {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.operator:hover {
+    background-color: #45a049;
+}
+
+.clear {
+    background-color: #f44336;
+    color: white;
+}
+
+.clear:hover {
+    background-color: #da190b;
+}
+
+.equals {
+    background-color: #2196F3;
+    color: white;
+}
+
+.equals:hover {
+    background-color: #1976D2;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.theme-toggle:hover {
+    background-color: var(--button-hover);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+@media (max-width: 400px) {
+    .calculator {
+        padding: 15px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    #result {
+        font-size: 2rem;
+    }
+
+    .theme-toggle {
+        top: 10px;
+        left: 10px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+} 
