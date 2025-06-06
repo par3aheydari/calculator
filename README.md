@@ -17,13 +17,13 @@
 ---
 
 ## 📁 ساختار فایل‌ها
-
+```bash
 calculator/
 ├── index.html
 ├── style.css
 ├── script.js
 └── README.md
-
+```
 
 ---
 
@@ -35,6 +35,6 @@ calculator/
 3. از ماشین حساب لذت ببرید 😍
 
 ```bash
-git clone https://github.com/your-username/farsi-calculator.git
-cd farsi-calculator
+git clone https://github.com/par3aheydari/calculator.git
+cd calculator
 open index.html
